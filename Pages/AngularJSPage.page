@@ -1,0 +1,27 @@
+<apex:page showHeader="false" sidebar="false" Controller="ContactsController" standardStylesheets="false">
+  <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"/>
+  <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"/>
+
+  <apex:includeScript value="{!URLFOR($Resource.angularBundle, 'js/factory.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.angularBundle, 'js/controllers.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.angularBundle, 'js/directives.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.angularBundle, 'js/app.js')}"/>
+
+   <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+   <script type="text/javascript">
+      var  _remoteActions = {
+          getAllContactsByFilter : '{!$RemoteAction.ContactsController.GetAllContactsByFilter}',
+          getContactResultById : '{!$RemoteAction.ContactsController.getContactById}',
+          saveContactChanges : '{!$RemoteAction.ContactsController.saveContactChanges}'
+        };
+      var sitePrefix = '{!$Site.Prefix}';
+      if (sitePrefix=='') sitePrefix='/apex';
+   </script>
+      
+    <div ng-app="app">
+      <my-header></my-header>
+      <ng-view/>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"/>   
+</apex:page>
