@@ -1,4 +1,4 @@
-# ContactManagement_Angular_Salesforce
+# ContactManagement Using AngularJs and Salesforce Remoting
 A contact management app using angularJs and Salesforce remoting operation can be used as base for angular development with force.com
 
 ### For enabling the static resources:
